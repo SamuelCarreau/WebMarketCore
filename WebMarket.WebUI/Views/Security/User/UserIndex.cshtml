@@ -1,0 +1,36 @@
+﻿@model List<WebMarket.Models.Security.User>
+
+@{
+    ViewBag.Title = "View";
+}
+
+<h2>User</h2>
+
+<p>
+    @Html.ActionLink("Create New", "UserCreate")
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.UserName</td>
+
+                <td>@user.Email</td>
+
+                <td>
+                    @Html.ActionLink("Edit", "Edit", user.Id.ToString()) |
+                    @Html.ActionLink("Details", "Details", user.Id.ToString()) |
+                    @Html.ActionLink("Delete", "Delete", user.Id.ToString())
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
