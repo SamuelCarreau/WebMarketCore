@@ -10,7 +10,7 @@ namespace WebMarket.Data
     {
         public DbSet<UserDB> Users { get; set; }
         public DbSet<RoleDB> Roles { get; set; }
-        public virtual DbSet<UserRoleDB> UserRole { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

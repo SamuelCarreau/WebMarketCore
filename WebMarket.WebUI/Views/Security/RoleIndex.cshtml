@@ -20,15 +20,15 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var role in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Name)
+                @Html.DisplayFor(modelItem => role.Name)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Edit", "roleUpdate", new {  id=role.Id }) |
+                @Html.ActionLink("Details", "roleDetails", new { id = role.Id }) |
+                @Html.ActionLink("Delete", "roleDelete", new { id = role.Id })
             </td>
         </tr>
 }

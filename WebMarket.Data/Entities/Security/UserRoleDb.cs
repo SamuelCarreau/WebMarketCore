@@ -8,7 +8,7 @@ namespace WebMarket.Data.Entities.Security
         public Guid UserId { get; set; }
         public Guid RoleId { get; set; }
 
-        public virtual RoleDB Role { get; set; }
         public virtual UserDB User { get; set; }
+        public virtual RoleDB Role { get; set; }
     }
 }

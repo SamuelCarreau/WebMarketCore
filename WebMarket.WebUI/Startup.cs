@@ -9,6 +9,9 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using WebMarket.Data;
+using WebMarket.Data.Repositories.Security;
+using WebMarket.Services;
 
 namespace WebMarket.WebUI
 {
@@ -35,6 +38,17 @@ namespace WebMarket.WebUI
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            // DBContext
+            services.AddDbContext<DataContext>();
+
+            // Repositories
+            services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<IRoleRepository, RoleRepository>();
+
+            // Services
+            services.AddTransient<ISecurityService, SecurityService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
